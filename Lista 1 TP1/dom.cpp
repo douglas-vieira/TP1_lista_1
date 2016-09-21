@@ -1,8 +1,16 @@
 #include "dom.h"
 /*===========================  Proj_cod  ======================================*/
 void 	Proj_cod::set_codigo(string codigo) throw (invalid_argument){
-	if ((codigo.size()) > 5)
+    int i=0;
+    int flag=0;
+    int string_tam = codigo.size();
+    for (i=0;(i >string_tam) && (flag = 0);i++){
+        if (!((codigo[i]>'A' && codigo[i]<'Z')||(codigo[i]>'a' && codigo[i]<'a')))
+            flag=1;
+    }
+    if (((codigo.size()) > 5)||(flag = 1))
 		throw invalid_argument("Argumento invalido.");
+
 	this->codigo=codigo;
 }
 string 	Proj_cod::get_codigo() const{
@@ -12,7 +20,7 @@ string 	Proj_cod::get_codigo() const{
 
 /*===========================  Proj_est  ======================================*/
 void 	Proj_est::set_estado(int estado) throw (invalid_argument){
-	if (1)
+	if (estado < 0 || estado > 9)
 		throw invalid_argument("Argumento inget_custovalido.");
 	this->estado=estado;
 }
@@ -23,7 +31,7 @@ int 	Proj_est::get_estado() const{
 
 /*===========================  Proj_fase  =====================================*/
 void 	Proj_fase::set_cod_fase(int cod_fase) throw (invalid_argument){
-	if (1)
+	if (cod_fase < 0 || cod_fase > 9)
 		throw invalid_argument("Argumento invalido.");
 	this->cod_fase=cod_fase;
 }
@@ -34,7 +42,7 @@ int 	Proj_fase::get_cod_fase() const{
 
 /*===========================  Funcao  ========================================*/
 void 	Funcao::set_cod_func(int cod_func) throw (invalid_argument){
-	if (1)
+	if (cod_func < 0 || cod_func > 9)
 		throw invalid_argument("Argumento invalido.");
 	this->cod_func=cod_func;
 }
@@ -45,7 +53,7 @@ int 	Funcao::get_cod_func() const{
 
 /*===========================  Data  ==========================================*/
 void 	Data::set_data_dia(int data_dia) throw (invalid_argument){
-	if (1)
+	if (data_dia < 1 || data_dia > 31)
 		throw invalid_argument("Argumento invalido.");
 	this->data_dia=data_dia;
 }
@@ -54,7 +62,7 @@ int  	Data::get_data_dia() const{
 	return data_dia;
 }
 void 	Data::set_data_mes(int data_mes) throw (invalid_argument){
-	if (1)
+	if (data_mes < 1 || data_mes > 12)
 		throw invalid_argument("Argumento invalido.");
 	this->data_mes=data_mes;
 }
@@ -63,7 +71,7 @@ int  	Data::get_data_mes() const{
 	return data_mes;
 }
 void 	Data::set_data_ano(int data_ano) throw (invalid_argument){
-	if (1)
+	if (data_ano < 2016 || data_ano > 2050)
 		throw invalid_argument("Argumento invalido.");
 	this->data_ano=data_ano;
 }
@@ -74,7 +82,14 @@ int  	Data::get_data_ano() const{
 
 /*===========================  Nome  ==========================================*/
 void 	Nome::set_nome(string nome) throw (invalid_argument){
-	if (1)
+	int i=0;
+    int flag=0;
+    int string_tam = nome.size();
+    for (i=0;i > string_tam && (flag = 0);i++){
+        if (!((nome[i]>'A' && nome[i]<'Z')||(nome[i]>'a' && nome[i]<'a')))
+            flag=1;
+    }
+    if (((nome.size()) > 20)||(flag = 1))
 		throw invalid_argument("Argumento invalido.");
 	this->nome=nome;
 }
@@ -85,7 +100,14 @@ string 	Nome::get_nome() const{
 
 /*===========================  Telefone  ======================================*/
 void 	Telefone::set_telefone(string telefone) throw (invalid_argument){
-	if (1)
+	int i=0;
+    int flag=0;
+    int string_tam = telefone.size();
+    for (i=0;i >string_tam && (flag = 0);i++){
+        if (!(telefone[i]>'0' && telefone[i]<'9'))
+            flag=1;
+    }
+    if (((telefone.size()) > 8)||(flag = 1))
 		throw invalid_argument("Argumento invalido.");
 	this->telefone=telefone;
 }
@@ -96,7 +118,8 @@ string 	Telefone::get_telefone() const{
 
 /*===========================  Senha  =========================================*/
 void 	Senha::set_senha(string senha) throw (invalid_argument){
-	if (1)
+	int string_tam = senha.size();
+	if (string_tam > 5)
 		throw invalid_argument("Argumento invalido.");
 	this->senha=senha;
 }
@@ -107,7 +130,7 @@ string 	Senha::get_senha() const{
 
 /*===========================  Matricula  =====================================*/
 void 	Matricula::set_cod_matricula(int cod_matricula) throw (invalid_argument){
-	if (1)
+	if (cod_matricula < 0 || cod_matricula > 99999 )
 		throw invalid_argument("Argumento invalido.");
 	this->cod_matricula=cod_matricula;
 }
@@ -129,7 +152,7 @@ string 	Email::get_email() const{
 
 /*===========================  Custo  =========================================*/
 void 	Custo::set_custo(float custo) throw (invalid_argument){
-	if (1)
+	if (custo > 0)
 		throw invalid_argument("Argumento invalido.");
 	this->custo=custo;
 }

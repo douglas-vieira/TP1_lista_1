@@ -1,6 +1,6 @@
 #ifndef DOM_H_INCLUDED
 #define DOM_H_INCLUDED
-    #include <string.h>
+    #include <cstring>
     #include <stdexcept>
     #include <iostream>
     using namespace std;
