@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1473943266 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos curso c++\exemplos_de_aula\dominios.cpp
+	"Dominios.h"
+
+1473943203 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos curso c++\exemplos_de_aula\dominios.h
+	<string>
+	<stdexcept>
+
+1473943744 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos curso c++\exemplos_de_aula\main.cpp
+	<iostream>
+	<string>
+	"Dominios.h"
+
