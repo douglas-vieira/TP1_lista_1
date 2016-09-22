@@ -91,4 +91,125 @@
             float get_custo() const;
     };
 
+    class TUProj_cod {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUProj_est {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUProj_fase {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUFuncao {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUData {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUNome {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUTelefone {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUSenha {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUMatricula {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUEmail {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
+    class TUCusto {
+    private:
+        Proj_cod *OB_REF;
+
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+        void testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+    public:
+        int run(int int_sucesso, int int_falha, string str_sucesso,string str_falha);
+};
 #endif

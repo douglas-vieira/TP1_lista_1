@@ -9,3 +9,17 @@
 	<stdexcept>
 	<iostream>
 
+1474540134 source:/home/douglas/Github/TP1_lista_1/Lista 1 TP1/dom.cpp
+	"dom.h"
+
+1474539972 /home/douglas/Github/TP1_lista_1/Lista 1 TP1/dom.h
+	<cstring>
+	<stdexcept>
+	<iostream>
+
+1474539917 source:/home/douglas/Github/TP1_lista_1/Lista 1 TP1/main.cpp
+	"main.h"
+
+1474515377 /home/douglas/Github/TP1_lista_1/Lista 1 TP1/main.h
+	"dom.h"
+

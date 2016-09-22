@@ -1,14 +1,9 @@
 #include "dom.h"
+
 /*===========================  Proj_cod  ======================================*/
 void 	Proj_cod::set_codigo(string codigo) throw (invalid_argument){
-    int i=0;
-    int flag=0;
-    int string_tam = codigo.size();
-    for (i=0;(i >string_tam) && (flag = 0);i++){
-        if (!((codigo[i]>'A' && codigo[i]<'Z')||(codigo[i]>'a' && codigo[i]<'a')))
-            flag=1;
-    }
-    if (((codigo.size()) > 5)||(flag = 1))
+    int string_tam = codigo.length();
+    if (string_tam > 5)
 		throw invalid_argument("Argumento invalido.");
 
 	this->codigo=codigo;
@@ -115,11 +110,20 @@ string 	Telefone::get_telefone() const{
 
 	return telefone;
 }
-
 /*===========================  Senha  =========================================*/
 void 	Senha::set_senha(string senha) throw (invalid_argument){
 	int string_tam = senha.size();
-	if (string_tam > 5)
+	int i=0, j=0;
+	int flag = 0;
+	for (i=0;(i+1)<string_tam;i++)
+    {
+        for (j=i+1;j<string_tam;j++)
+        {
+            if (senha[i] == senha[i])
+                flag = 1;
+        }
+    }
+	if ((string_tam > 5) || (flag = 1))
 		throw invalid_argument("Argumento invalido.");
 	this->senha=senha;
 }
@@ -160,3 +164,87 @@ float 	Custo::get_custo() const{
 
 	return custo;
 }
+
+/*DEFINIÇOES DOS TESTES DE UNIDADE*/
+void TUProj_cod::setUp(){
+    OB_REF = new Proj_cod();
+}
+void TUProj_cod::tearDown(){
+    delete OB_REF;
+}
+void TUProj_cod::testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha){
+    try{
+        OB_REF->set_codigo(str_sucesso);
+        cout << "VALOR DE TESTE VALIDO:"<<str_sucesso<<endl;
+        if (OB_REF->get_codigo() != str_sucesso)
+        {
+            cout << "NAO PASSOU, VALOR DIFERENTE"<<endl;
+        }
+        else
+            cout << "PASSOU, VALOR IGUAL"<<endl<<"============================================"<<endl;
+    }
+    catch(invalid_argument excecao){
+        cout << "NÃO PASSOU";
+    }
+}
+void TUProj_cod::testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha){
+    try{
+        cout << "VALOR DE TESTE INVALIDO:"<<str_falha<<endl;
+        OB_REF->set_codigo(str_falha);
+
+    }
+    catch(invalid_argument excecao){
+        cout << "NÃO PASSOU, pego na excecao"<<endl;
+        return;
+    }
+}
+int  TUProj_cod::run(int int_sucesso, int int_falha, string str_sucesso,string str_falha){
+    setUp();
+    testarCenarioSucesso(int_sucesso,int_falha,str_sucesso,str_falha);
+    testarCenarioFalha(int_sucesso,int_falha,str_sucesso,str_falha);
+    tearDown();
+    return 0;
+}
+
+void TUProj_est::setUp(){
+
+    OB_REF = new Proj_est();
+}
+void TUProj_est::tearDown(){
+
+    delete OB_REF;
+}
+void TUProj_est::testarCenarioSucesso(int int_sucesso, int int_falha, string str_sucesso,string str_falha){
+    try{
+        OB_REF->set_codigo(str_sucesso);
+        cout << "VALOR DE TESTE VALIDO:"<<int_sucesso<<endl;
+        if (OB_REF->get_codigo() != int_sucesso)
+        {
+            cout << "NAO PASSOU, VALOR DIFERENTE"<<endl;
+        }
+        else
+            cout << "PASSOU, VALOR IGUAL"<<endl<<"============================================"<<endl;
+    }
+    catch(invalid_argument excecao){
+        cout << "NÃO PASSOU";
+    }
+}
+void TUProj_est::testarCenarioFalha(int int_sucesso, int int_falha, string str_sucesso,string str_falha){
+    try{
+        cout << "VALOR DE TESTE INVALIDO:"<<int_falha<<endl;
+        OB_REF->set_codigo(int_falha);
+
+    }
+    catch(invalid_argument excecao){
+        cout << "NÃO PASSOU, pego na excecao"<<endl;
+        return;
+    }
+}
+int  TUProj_est::run(int int_sucesso, int int_falha, string str_sucesso,string str_falha){
+    setUp();
+    testarCenarioSucesso(int_sucesso,int_falha,str_sucesso,str_falha);
+    testarCenarioFalha(int_sucesso,int_falha,str_sucesso,str_falha);
+    tearDown();
+    return 0;
+}
+
